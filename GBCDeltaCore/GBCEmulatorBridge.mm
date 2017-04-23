@@ -76,15 +76,21 @@
 
 - (void)runFrame
 {
-    size_t samplesCount = 2064;
+    size_t samplesCount = 35112;
     
-    gambatte::uint_least32_t audioBuffer[samplesCount * 2];
+    // Each audio frame = 2 16-bit channel frames (32-bits total per audio frame).
+    // Additionally, Gambatte may return up to 2064 audio samples more than requested, so we need to add 2064 to the requested audioBuffer size.
+    gambatte::uint_least32_t audioBuffer[samplesCount + 2064];
     size_t samples = samplesCount;
     
     while (self.gambatte->runFor((gambatte::uint_least32_t *)self.videoRenderer.videoBuffer, 160, audioBuffer, samples) == -1)
     {
+        [self.audioRenderer.audioBuffer writeBuffer:(uint8_t *)audioBuffer size:samples * 4];
+        
         samples = samplesCount;
     }
+    
+    [self.audioRenderer.audioBuffer writeBuffer:(uint8_t *)audioBuffer size:samples * 4];
 }
 
 #pragma mark - Inputs -
