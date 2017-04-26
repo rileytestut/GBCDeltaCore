@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF5996961EA0551100595F8D /* GBCInputGetter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF5996941EA0551100595F8D /* GBCInputGetter.cpp */; };
+		BF5996971EA0551100595F8D /* GBCInputGetter.h in Headers */ = {isa = PBXBuildFile; fileRef = BF5996951EA0551100595F8D /* GBCInputGetter.h */; };
+		BF5996991EA0598E00595F8D /* Standard.deltaskin in Resources */ = {isa = PBXBuildFile; fileRef = BF5996981EA0598E00595F8D /* Standard.deltaskin */; };
 		BF8F2AB31E9C879300F89F15 /* GBCDeltaCore.h in Headers */ = {isa = PBXBuildFile; fileRef = BF8F2AB11E9C879300F89F15 /* GBCDeltaCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF8F2D9A1E9D8C7D00F89F15 /* adaptivesleep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF8F2D601E9D8C7D00F89F15 /* adaptivesleep.cpp */; };
 		BF8F2D9B1E9D8C7D00F89F15 /* rateest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF8F2D641E9D8C7D00F89F15 /* rateest.cpp */; };
@@ -89,6 +92,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BF5996941EA0551100595F8D /* GBCInputGetter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GBCInputGetter.cpp; sourceTree = "<group>"; };
+		BF5996951EA0551100595F8D /* GBCInputGetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBCInputGetter.h; sourceTree = "<group>"; };
+		BF5996981EA0598E00595F8D /* Standard.deltaskin */ = {isa = PBXFileReference; lastKnownFileType = file; name = Standard.deltaskin; path = "Controller Skin/Standard.deltaskin"; sourceTree = "<group>"; };
 		BF8F2AAE1E9C879300F89F15 /* GBCDeltaCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GBCDeltaCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF8F2AB11E9C879300F89F15 /* GBCDeltaCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBCDeltaCore.h; sourceTree = "<group>"; };
 		BF8F2AB21E9C879300F89F15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -528,6 +534,7 @@
 			isa = PBXGroup;
 			children = (
 				BF8F2AB21E9C879300F89F15 /* Info.plist */,
+				BF5996981EA0598E00595F8D /* Standard.deltaskin */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -545,6 +552,8 @@
 			children = (
 				BFF074211E9DAA8A00ACDF4A /* GBCEmulatorBridge.h */,
 				BFF074221E9DAA8A00ACDF4A /* GBCEmulatorBridge.mm */,
+				BF5996951EA0551100595F8D /* GBCInputGetter.h */,
+				BF5996941EA0551100595F8D /* GBCInputGetter.cpp */,
 			);
 			name = Bridge;
 			sourceTree = "<group>";
@@ -557,6 +566,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF8F2AB31E9C879300F89F15 /* GBCDeltaCore.h in Headers */,
+				BF5996971EA0551100595F8D /* GBCInputGetter.h in Headers */,
 				BFF074231E9DAA8A00ACDF4A /* GBCEmulatorBridge.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -645,6 +655,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF5996991EA0598E00595F8D /* Standard.deltaskin in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -655,6 +666,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF5996961EA0551100595F8D /* GBCInputGetter.cpp in Sources */,
 				BFF074241E9DAA8A00ACDF4A /* GBCEmulatorBridge.mm in Sources */,
 				BFF074261E9DAD2800ACDF4A /* GBCDeltaCore.m in Sources */,
 				BFF074191E9D99B200ACDF4A /* GBC.swift in Sources */,

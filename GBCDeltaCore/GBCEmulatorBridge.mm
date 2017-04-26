@@ -8,6 +8,9 @@
 
 #import "GBCEmulatorBridge.h"
 
+// Inputs
+#include "GBCInputGetter.h"
+
 // Gambatte
 #include "gambatte.h"
 
@@ -16,6 +19,7 @@
 @property (nonatomic, copy, nullable, readwrite) NSURL *gameURL;
 
 @property (nonatomic, assign, readonly) std::shared_ptr<gambatte::GB> gambatte;
+@property (nonatomic, assign, readonly) std::shared_ptr<GBCInputGetter> inputGetter;
 
 @end
 
@@ -40,7 +44,11 @@
     self = [super init];
     if (self)
     {
+        std::shared_ptr<GBCInputGetter> inputGetter(new GBCInputGetter());
+        _inputGetter = inputGetter;
+        
         std::shared_ptr<gambatte::GB> gambatte(new gambatte::GB());
+        gambatte->setInputGetter(inputGetter.get());
         _gambatte = gambatte;
     }
     
@@ -97,17 +105,17 @@
 
 - (void)activateInput:(NSInteger)input
 {
-    
+    self.inputGetter->activateInput((unsigned)input);
 }
 
 - (void)deactivateInput:(NSInteger)input
 {
-    
+    self.inputGetter->deactivateInput((unsigned)input);
 }
 
 - (void)resetInputs
 {
-    
+    self.inputGetter->resetInputs();
 }
 
 #pragma mark - Save States -
