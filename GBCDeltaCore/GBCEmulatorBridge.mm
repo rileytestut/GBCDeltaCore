@@ -8,11 +8,17 @@
 
 #import "GBCEmulatorBridge.h"
 
+// Cheats
+#import "GBCCheat.h"
+
 // Inputs
 #include "GBCInputGetter.h"
 
 // Gambatte
 #include "gambatte.h"
+
+// GBCDeltaCore
+#import <GBCDeltaCore/GBCDeltaCore.h>
 
 @interface GBCEmulatorBridge ()
 
@@ -21,6 +27,8 @@
 
 @property (nonatomic, assign, readonly) std::shared_ptr<gambatte::GB> gambatte;
 @property (nonatomic, assign, readonly) std::shared_ptr<GBCInputGetter> inputGetter;
+
+@property (nonatomic, readonly) NSMutableSet<GBCCheat *> *cheats;
 
 @end
 
@@ -54,6 +62,8 @@
         gambatte->setInputGetter(inputGetter.get());
         gambatte->setSaveDir(_gameSaveDirectory.fileSystemRepresentation);
         _gambatte = gambatte;
+        
+        _cheats = [NSMutableSet set];
     }
     
     return self;
@@ -176,19 +186,51 @@
 
 #pragma mark - Cheats -
 
-- (BOOL)addCheatCode:(NSString *)cheatCode type:(NSString *)type
+- (BOOL)addCheatCode:(NSString *)cheatCode type:(CheatType)type
 {
+    GBCCheat *cheat = [[GBCCheat alloc] initWithCode:cheatCode type:type];
+    if (cheat == nil)
+    {
+        return NO;
+    }
+    
+    [self.cheats addObject:cheat];
+    
     return YES;
 }
 
 - (void)resetCheats
 {
+    [self.cheats removeAllObjects];
     
+    self.gambatte->setGameGenie("");
+    self.gambatte->setGameShark("");
 }
 
 - (void)updateCheats
 {
+    NSMutableString *gameGenieCodes = [NSMutableString string];
+    NSMutableString *gameSharkCodes = [NSMutableString string];
     
+    for (GBCCheat *cheat in self.cheats.copy)
+    {
+        NSMutableString *codes = nil;
+        
+        if ([cheat.type isEqualToString:CheatTypeGameGenie])
+        {
+            codes = gameGenieCodes;
+        }
+        else if ([cheat.type isEqualToString:CheatTypeGameShark])
+        {
+            codes = gameSharkCodes;
+        }
+        
+        [codes appendString:cheat.code];
+        [codes appendString:@";"];
+    }
+    
+    self.gambatte->setGameGenie([gameGenieCodes UTF8String]);
+    self.gambatte->setGameShark([gameSharkCodes UTF8String]);
 }
 
 #pragma mark - Private -
