@@ -270,6 +270,7 @@
 				BF833CAC1EB0821E00B73D57 /* GBCCheat.m */,
 			);
 			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		BF8F2AA41E9C879300F89F15 = {
@@ -559,6 +560,7 @@
 				BFF0741E1E9DA7EB00ACDF4A /* GBCInputTransformer.swift */,
 			);
 			name = Inputs;
+			path = Inputs;
 			sourceTree = "<group>";
 		};
 		BFF074201E9DAA5400ACDF4A /* Bridge */ = {
@@ -570,6 +572,7 @@
 				BF5996941EA0551100595F8D /* GBCInputGetter.cpp */,
 			);
 			name = Bridge;
+			path = Bridge;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
