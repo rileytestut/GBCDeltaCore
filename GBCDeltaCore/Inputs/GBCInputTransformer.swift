@@ -71,19 +71,19 @@ public struct GBCInputTransformer: InputTransforming
         return inputs
     }
     
-    public func inputs(for controller: MFiExternalController, input: MFiExternalControllerInput) -> [Input]
+    public func inputs(for controller: MFiGameController, input: MFiGameController.Input) -> [Input]
     {
-        var inputs: [Input] = []
+        var inputs: [GBCGameInput] = []
         
         switch input
         {
         case let .dPad(xAxis: xAxis, yAxis: yAxis): inputs.append(contentsOf: self.inputs(forXAxis: xAxis, YAxis: yAxis))
         case let .leftThumbstick(xAxis: xAxis, yAxis: yAxis): inputs.append(contentsOf: self.inputs(forXAxis: xAxis, YAxis: yAxis))
         case .rightThumbstick(xAxis: _, yAxis: _): break
-        case .a: inputs.append(GBCGameInput.a)
-        case .b: inputs.append(GBCGameInput.b)
-        case .x: inputs.append(GBCGameInput.select)
-        case .y: inputs.append(GBCGameInput.start)
+        case .a: inputs.append(.a)
+        case .b: inputs.append(.b)
+        case .x: inputs.append(.select)
+        case .y: inputs.append(.start)
         case .l: break
         case .r: break
         case .leftTrigger: break
@@ -96,26 +96,26 @@ public struct GBCInputTransformer: InputTransforming
 
 private extension GBCInputTransformer
 {
-    func inputs(forXAxis xAxis: Float, YAxis yAxis: Float) -> [Input]
+    func inputs(forXAxis xAxis: Float, YAxis yAxis: Float) -> [GBCGameInput]
     {
-        var inputs: [Input] = []
+        var inputs: [GBCGameInput] = []
         
         if xAxis > 0.0
         {
-            inputs.append(GBCGameInput.right)
+            inputs.append(.right)
         }
         else if xAxis < 0.0
         {
-            inputs.append(GBCGameInput.left)
+            inputs.append(.left)
         }
         
         if yAxis > 0.0
         {
-            inputs.append(GBCGameInput.up)
+            inputs.append(.up)
         }
         else if yAxis < 0.0
         {
-            inputs.append(GBCGameInput.down)
+            inputs.append(.down)
         }
         
         return inputs
