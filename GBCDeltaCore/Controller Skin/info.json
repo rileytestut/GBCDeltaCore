@@ -1,1 +1,230 @@
-{"name":"Standard GBC","identifier":"com.delta.gbc.standard","gameTypeIdentifier":"com.rileytestut.delta.game.gbc","debug":false,"representations":{"iphone":{"portrait":{"assets":{"resizable":"iphone_portrait.pdf"},"items":[{"keys":["dpad"],"frame":{"x":6,"y":56,"width":132,"height":132},"extendedEdges":{"top":15,"bottom":15,"left":15,"right":15}},{"keys":["a"],"frame":{"x":241,"y":62,"width":64,"height":64},"extendedEdges":{"right":15}},{"keys":["b"],"frame":{"x":176,"y":121,"width":64,"height":64}},{"keys":["start"],"frame":{"x":173,"y":211,"width":33,"height":16},"extendedEdges":{"bottom":13}},{"keys":["select"],"frame":{"x":113,"y":211,"width":33,"height":16},"extendedEdges":{"bottom":13}},{"keys":["menu"],"frame":{"x":7,"y":211,"width":33,"height":16},"extendedEdges":{"left":7,"bottom":13}}],"mappingSize":{"width":320,"height":240},"extendedEdges":{"top":7,"bottom":7,"left":7,"right":7}},"landscape":{"assets":{"resizable":"iphone_landscape.pdf"},"items":[{"keys":["dpad"],"frame":{"x":8,"y":231,"width":131,"height":131},"extendedEdges":{"left":15,"top":15,"right":15,"bottom":15}},{"keys":["a"],"frame":{"x":587,"y":242,"width":64,"height":64},"extendedEdges":{"right":16}},{"keys":["b"],"frame":{"x":521,"y":295,"width":64,"height":64},"extendedEdges":{"bottom":16}},{"keys":["start"],"frame":{"x":356,"y":334,"width":49,"height":23},"extendedEdges":{"bottom":18}},{"keys":["select"],"frame":{"x":260,"y":334,"width":49,"height":23},"extendedEdges":{"bottom":18}},{"keys":["menu"],"frame":{"x":13,"y":18,"width":49,"height":23},"extendedEdges":{"left":13,"top":18}}],"gameScreenFrame":{"x":183,"y":0,"width":300,"height":270},"mappingSize":{"width":667,"height":375},"extendedEdges":{"top":7,"bottom":7,"left":7,"right":7},"translucent":false}}}}
+{
+  "name" : "Standard GBC",
+  "identifier" : "com.delta.gbc.standard",
+  "gameTypeIdentifier" : "com.rileytestut.delta.game.gbc",
+  "debug" : false,
+  "representations" : {
+    "iphone" : {
+      "portrait" : {
+        "assets" : {
+          "resizable" : "iphone_portrait.pdf"
+        },
+        "items" : [
+          {
+            "inputs" : {
+              "up" : "up",
+              "down" : "down",
+              "left" : "left",
+              "right" : "right"
+            },
+            "frame" : {
+              "x" : 6,
+              "y" : 56,
+              "width" : 132,
+              "height" : 132
+            },
+            "extendedEdges" : {
+              "top" : 15,
+              "bottom" : 15,
+              "left" : 15,
+              "right" : 15
+            }
+          },
+          {
+            "inputs" : [
+              "a"
+            ],
+            "frame" : {
+              "x" : 241,
+              "y" : 62,
+              "width" : 64,
+              "height" : 64
+            },
+            "extendedEdges" : {
+              "right" : 15
+            }
+          },
+          {
+            "inputs" : [
+              "b"
+            ],
+            "frame" : {
+              "x" : 176,
+              "y" : 121,
+              "width" : 64,
+              "height" : 64
+            }
+          },
+          {
+            "inputs" : [
+              "start"
+            ],
+            "frame" : {
+              "x" : 173,
+              "y" : 211,
+              "width" : 33,
+              "height" : 16
+            },
+            "extendedEdges" : {
+              "bottom" : 13
+            }
+          },
+          {
+            "inputs" : [
+              "select"
+            ],
+            "frame" : {
+              "x" : 113,
+              "y" : 211,
+              "width" : 33,
+              "height" : 16
+            },
+            "extendedEdges" : {
+              "bottom" : 13
+            }
+          },
+          {
+            "inputs" : [
+              "menu"
+            ],
+            "frame" : {
+              "x" : 7,
+              "y" : 211,
+              "width" : 33,
+              "height" : 16
+            },
+            "extendedEdges" : {
+              "left" : 7,
+              "bottom" : 13
+            }
+          }
+        ],
+        "mappingSize" : {
+          "width" : 320,
+          "height" : 240
+        },
+        "extendedEdges" : {
+          "top" : 7,
+          "bottom" : 7,
+          "left" : 7,
+          "right" : 7
+        }
+      },
+      "landscape" : {
+        "assets" : {
+          "resizable" : "iphone_landscape.pdf"
+        },
+        "items" : [
+          {
+            "inputs" : {
+              "up" : "up",
+              "down" : "down",
+              "left" : "left",
+              "right" : "right"
+            },
+            "frame" : {
+              "x" : 8,
+              "y" : 231,
+              "width" : 131,
+              "height" : 131
+            },
+            "extendedEdges" : {
+              "left" : 15,
+              "top" : 15,
+              "right" : 15,
+              "bottom" : 15
+            }
+          },
+          {
+            "inputs" : [
+              "a"
+            ],
+            "frame" : {
+              "x" : 587,
+              "y" : 242,
+              "width" : 64,
+              "height" : 64
+            },
+            "extendedEdges" : {
+              "right" : 16
+            }
+          },
+          {
+            "inputs" : [
+              "b"
+            ],
+            "frame" : {
+              "x" : 521,
+              "y" : 295,
+              "width" : 64,
+              "height" : 64
+            },
+            "extendedEdges" : {
+              "bottom" : 16
+            }
+          },
+          {
+            "inputs" : [
+              "start"
+            ],
+            "frame" : {
+              "x" : 356,
+              "y" : 334,
+              "width" : 49,
+              "height" : 23
+            },
+            "extendedEdges" : {
+              "bottom" : 18
+            }
+          },
+          {
+            "inputs" : [
+              "select"
+            ],
+            "frame" : {
+              "x" : 260,
+              "y" : 334,
+              "width" : 49,
+              "height" : 23
+            },
+            "extendedEdges" : {
+              "bottom" : 18
+            }
+          },
+          {
+            "inputs" : [
+              "menu"
+            ],
+            "frame" : {
+              "x" : 13,
+              "y" : 18,
+              "width" : 49,
+              "height" : 23
+            },
+            "extendedEdges" : {
+              "left" : 13,
+              "top" : 18
+            }
+          }
+        ],
+        "gameScreenFrame" : {
+          "x" : 183,
+          "y" : 0,
+          "width" : 300,
+          "height" : 270
+        },
+        "mappingSize" : {
+          "width" : 667,
+          "height" : 375
+        },
+        "extendedEdges" : {
+          "top" : 7,
+          "bottom" : 7,
+          "left" : 7,
+          "right" : 7
+        },
+        "translucent" : false
+      }
+    }
+  }
+}

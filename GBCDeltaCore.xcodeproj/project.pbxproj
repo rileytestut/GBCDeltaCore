@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF5267CE1F60BD7F007737FB /* Standard.deltamapping in Resources */ = {isa = PBXBuildFile; fileRef = BF5267CD1F60BD7C007737FB /* Standard.deltamapping */; };
 		BF5996961EA0551100595F8D /* GBCInputGetter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF5996941EA0551100595F8D /* GBCInputGetter.cpp */; };
 		BF5996971EA0551100595F8D /* GBCInputGetter.h in Headers */ = {isa = PBXBuildFile; fileRef = BF5996951EA0551100595F8D /* GBCInputGetter.h */; };
 		BF5996991EA0598E00595F8D /* Standard.deltaskin in Resources */ = {isa = PBXBuildFile; fileRef = BF5996981EA0598E00595F8D /* Standard.deltaskin */; };
@@ -64,7 +65,6 @@
 		BF8F2E1B1E9D8C8A00F89F15 /* sprite_mapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF8F2DF81E9D8C8A00F89F15 /* sprite_mapper.cpp */; };
 		BF8F2E1C1E9D8C8A00F89F15 /* video.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF8F2DFA1E9D8C8A00F89F15 /* video.cpp */; };
 		BFF074191E9D99B200ACDF4A /* GBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF074181E9D99B200ACDF4A /* GBC.swift */; };
-		BFF0741F1E9DA7EB00ACDF4A /* GBCInputTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF0741E1E9DA7EB00ACDF4A /* GBCInputTransformer.swift */; };
 		BFF074231E9DAA8A00ACDF4A /* GBCEmulatorBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = BFF074211E9DAA8A00ACDF4A /* GBCEmulatorBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BFF074241E9DAA8A00ACDF4A /* GBCEmulatorBridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = BFF074221E9DAA8A00ACDF4A /* GBCEmulatorBridge.mm */; };
 		BFF074261E9DAD2800ACDF4A /* GBCDeltaCore.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF074251E9DAD2800ACDF4A /* GBCDeltaCore.m */; };
@@ -94,6 +94,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BF5267CD1F60BD7C007737FB /* Standard.deltamapping */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Standard.deltamapping; sourceTree = "<group>"; };
 		BF5996941EA0551100595F8D /* GBCInputGetter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GBCInputGetter.cpp; sourceTree = "<group>"; };
 		BF5996951EA0551100595F8D /* GBCInputGetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBCInputGetter.h; sourceTree = "<group>"; };
 		BF5996981EA0598E00595F8D /* Standard.deltaskin */ = {isa = PBXFileReference; lastKnownFileType = file; name = Standard.deltaskin; path = "Controller Skin/Standard.deltaskin"; sourceTree = "<group>"; };
@@ -238,7 +239,6 @@
 		BF8F2E211E9D8C9300F89F15 /* loadres.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loadres.h; sourceTree = "<group>"; };
 		BF8F2E221E9D8C9300F89F15 /* pakinfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pakinfo.h; sourceTree = "<group>"; };
 		BFF074181E9D99B200ACDF4A /* GBC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GBC.swift; sourceTree = "<group>"; };
-		BFF0741E1E9DA7EB00ACDF4A /* GBCInputTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GBCInputTransformer.swift; sourceTree = "<group>"; };
 		BFF074211E9DAA8A00ACDF4A /* GBCEmulatorBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBCEmulatorBridge.h; sourceTree = "<group>"; };
 		BFF074221E9DAA8A00ACDF4A /* GBCEmulatorBridge.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GBCEmulatorBridge.mm; sourceTree = "<group>"; };
 		BFF074251E9DAD2800ACDF4A /* GBCDeltaCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBCDeltaCore.m; sourceTree = "<group>"; };
@@ -297,7 +297,6 @@
 				BFF074251E9DAD2800ACDF4A /* GBCDeltaCore.m */,
 				BFF074181E9D99B200ACDF4A /* GBC.swift */,
 				BFF074201E9DAA5400ACDF4A /* Bridge */,
-				BFF0741D1E9DA7D800ACDF4A /* Inputs */,
 				BF833CA51EB07F6200B73D57 /* Model */,
 				BFF074171E9D991A00ACDF4A /* Supporting Files */,
 			);
@@ -550,16 +549,9 @@
 			children = (
 				BF8F2AB21E9C879300F89F15 /* Info.plist */,
 				BF5996981EA0598E00595F8D /* Standard.deltaskin */,
+				BF5267CD1F60BD7C007737FB /* Standard.deltamapping */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		BFF0741D1E9DA7D800ACDF4A /* Inputs */ = {
-			isa = PBXGroup;
-			children = (
-				BFF0741E1E9DA7EB00ACDF4A /* GBCInputTransformer.swift */,
-			);
-			path = Inputs;
 			sourceTree = "<group>";
 		};
 		BFF074201E9DAA5400ACDF4A /* Bridge */ = {
@@ -672,6 +664,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF5996991EA0598E00595F8D /* Standard.deltaskin in Resources */,
+				BF5267CE1F60BD7F007737FB /* Standard.deltamapping in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,7 +680,6 @@
 				BFF074241E9DAA8A00ACDF4A /* GBCEmulatorBridge.mm in Sources */,
 				BFF074261E9DAD2800ACDF4A /* GBCDeltaCore.m in Sources */,
 				BFF074191E9D99B200ACDF4A /* GBC.swift in Sources */,
-				BFF0741F1E9DA7EB00ACDF4A /* GBCInputTransformer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

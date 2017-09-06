@@ -16,13 +16,31 @@ public extension GameType
     public static let gbc = GameType("com.rileytestut.delta.game.gbc")
 }
 
+@objc public enum GBCGameInput: Int, Input
+{
+    case up = 0x40
+    case down = 0x80
+    case left = 0x20
+    case right = 0x10
+    case a = 0x01
+    case b = 0x02
+    case start = 0x08
+    case select = 0x04
+    
+    public var type: InputType {
+        return .game(.gbc)
+    }
+}
+
 public struct GBC: DeltaCoreProtocol
 {
     public static let core = GBC()
     
+    public let bundleIdentifier = "com.rileytestut.GBCDeltaCore"
+    
     public let gameType = GameType.gbc
     
-    public let bundleIdentifier = "com.rileytestut.GBCDeltaCore"
+    public let gameInputType: Input.Type = GBCGameInput.self
     
     public let gameSaveFileExtension = "sav"
     
@@ -39,8 +57,6 @@ public struct GBC: DeltaCoreProtocol
     }()
     
     public let emulatorBridge: EmulatorBridging = GBCEmulatorBridge.shared
-    
-    public let inputTransformer: InputTransforming = GBCInputTransformer()
     
     private init()
     {
