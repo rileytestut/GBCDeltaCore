@@ -46,7 +46,7 @@ public struct GBC: DeltaCoreProtocol
     
     public let frameDuration = (1.0 / 60.0)
     
-    public let audioFormat = AVAudioFormat(commonFormat: .pcmFormatInt16, sampleRate: 35112 * 60, channels: 2, interleaved: true)
+    public let audioFormat = AVAudioFormat(commonFormat: .pcmFormatInt16, sampleRate: 35112 * 60, channels: 2, interleaved: true)!
     
     public let videoFormat = VideoFormat(pixelFormat: .bgra8, dimensions: CGSize(width: 160, height: 144))
     
