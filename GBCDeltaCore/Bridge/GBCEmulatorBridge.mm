@@ -258,4 +258,11 @@
     return YES;
 }
 
+#pragma mark - Getters/Setters -
+
+- (NSTimeInterval)frameDuration
+{
+    return (1.0 / 60.0);
+}
+
 @end

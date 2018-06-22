@@ -36,15 +36,11 @@ public struct GBC: DeltaCoreProtocol
 {
     public static let core = GBC()
     
-    public let bundleIdentifier = "com.rileytestut.GBCDeltaCore"
-    
     public let gameType = GameType.gbc
     
     public let gameInputType: Input.Type = GBCGameInput.self
     
     public let gameSaveFileExtension = "sav"
-    
-    public let frameDuration = (1.0 / 60.0)
     
     public let audioFormat = AVAudioFormat(commonFormat: .pcmFormatInt16, sampleRate: 35112 * 60, channels: 2, interleaved: true)!
     
