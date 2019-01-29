@@ -14,11 +14,19 @@
 // Inputs
 #include "GBCInputGetter.h"
 
-// Gambatte
-#include "gambatte.h"
-
 // GBCDeltaCore
 #import <GBCDeltaCore/GBCDeltaCore.h>
+
+// HACKY. Need to access private members to ensure save data loads properly.
+// This redefines the private members as public so we can use them.
+#define private public
+
+// Gambatte
+#include "gambatte.h"
+#include "cpu.h"
+
+// Undefine private.
+#undef private
 
 @interface GBCEmulatorBridge ()
 
@@ -182,6 +190,10 @@
             [self safelyCopyFileAtURL:rtcURL toURL:temporaryRTCURL];
         }
     }
+    
+    // Hacky pointer manipulation to obtain the underlying CPU struct, then explicitly call loadSavedata().
+    gambatte::CPU *cpu = (gambatte::CPU *)self.gambatte->p_;
+    (*cpu).loadSavedata();
 }
 
 #pragma mark - Cheats -
