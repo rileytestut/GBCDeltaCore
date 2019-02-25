@@ -21,9 +21,14 @@
 // This redefines the private members as public so we can use them.
 #define private public
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wshorten-64-to-32"
+
 // Gambatte
 #include "gambatte.h"
 #include "cpu.h"
+
+#pragma clang diagnostic pop
 
 // Undefine private.
 #undef private
