@@ -630,7 +630,7 @@
 					BF8F2AAD1E9C879300F89F15 = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = 6XVY5G3U44;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 					BF8F2D551E9D8C2800F89F15 = {
@@ -893,7 +893,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -913,7 +913,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rileytestut.GBCDeltaCore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
