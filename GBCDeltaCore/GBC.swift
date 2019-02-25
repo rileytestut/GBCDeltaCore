@@ -13,7 +13,7 @@ import DeltaCore
 
 public extension GameType
 {
-    public static let gbc = GameType("com.rileytestut.delta.game.gbc")
+    static let gbc = GameType("com.rileytestut.delta.game.gbc")
 }
 
 @objc public enum GBCGameInput: Int, Input
