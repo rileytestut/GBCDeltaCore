@@ -126,11 +126,13 @@
     }
     
     [self.audioRenderer.audioBuffer writeBuffer:(uint8_t *)audioBuffer size:samples * 4];
+    
+    [self.videoRenderer processFrame];
 }
 
 #pragma mark - Inputs -
 
-- (void)activateInput:(NSInteger)input
+- (void)activateInput:(NSInteger)input value:(double)value
 {
     self.inputGetter->activateInput((unsigned)input);
 }
