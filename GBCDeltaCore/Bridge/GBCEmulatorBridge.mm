@@ -109,7 +109,7 @@
 
 #pragma mark - Game Loop -
 
-- (void)runFrame
+- (void)runFrameAndProcessVideo:(BOOL)processVideo
 {
     size_t samplesCount = 35112;
     
@@ -127,7 +127,10 @@
     
     [self.audioRenderer.audioBuffer writeBuffer:(uint8_t *)audioBuffer size:samples * 4];
     
-    [self.videoRenderer processFrame];
+    if (processVideo)
+    {
+        [self.videoRenderer processFrame];
+    }
 }
 
 #pragma mark - Inputs -
