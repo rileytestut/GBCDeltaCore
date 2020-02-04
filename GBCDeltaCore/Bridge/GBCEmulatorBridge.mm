@@ -14,8 +14,10 @@
 // Inputs
 #include "GBCInputGetter.h"
 
-// GBCDeltaCore
+// DeltaCore
 #import <GBCDeltaCore/GBCDeltaCore.h>
+#import <DeltaCore/DeltaCore-Swift.h>
+#import "GBCDeltaCore-Swift.h"
 
 // HACKY. Need to access private members to ensure save data loads properly.
 // This redefines the private members as public so we can use them.
@@ -33,7 +35,7 @@
 // Undefine private.
 #undef private
 
-@interface GBCEmulatorBridge ()
+@interface GBCEmulatorBridge () <DLTAEmulatorBridging>
 
 @property (nonatomic, copy, nullable, readwrite) NSURL *gameURL;
 @property (nonatomic, copy, nonnull, readonly) NSURL *gameSaveDirectory;

@@ -67,8 +67,9 @@
 		BFF074191E9D99B200ACDF4A /* GBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF074181E9D99B200ACDF4A /* GBC.swift */; };
 		BFF074231E9DAA8A00ACDF4A /* GBCEmulatorBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = BFF074211E9DAA8A00ACDF4A /* GBCEmulatorBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BFF074241E9DAA8A00ACDF4A /* GBCEmulatorBridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = BFF074221E9DAA8A00ACDF4A /* GBCEmulatorBridge.mm */; };
-		BFF074261E9DAD2800ACDF4A /* GBCDeltaCore.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF074251E9DAD2800ACDF4A /* GBCDeltaCore.m */; };
+		BFF074261E9DAD2800ACDF4A /* GBCTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF074251E9DAD2800ACDF4A /* GBCTypes.m */; };
 		BFF074271E9DB58E00ACDF4A /* libGambatte.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8F2D561E9D8C2800F89F15 /* libGambatte.a */; };
+		BFFDF03A23E3BDCE00931B96 /* GBCTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = BFFDF03823E3BDCE00931B96 /* GBCTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -241,7 +242,8 @@
 		BFF074181E9D99B200ACDF4A /* GBC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GBC.swift; sourceTree = "<group>"; };
 		BFF074211E9DAA8A00ACDF4A /* GBCEmulatorBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBCEmulatorBridge.h; sourceTree = "<group>"; };
 		BFF074221E9DAA8A00ACDF4A /* GBCEmulatorBridge.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GBCEmulatorBridge.mm; sourceTree = "<group>"; };
-		BFF074251E9DAD2800ACDF4A /* GBCDeltaCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBCDeltaCore.m; sourceTree = "<group>"; };
+		BFF074251E9DAD2800ACDF4A /* GBCTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBCTypes.m; sourceTree = "<group>"; };
+		BFFDF03823E3BDCE00931B96 /* GBCTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBCTypes.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,10 +296,10 @@
 			isa = PBXGroup;
 			children = (
 				BF8F2AB11E9C879300F89F15 /* GBCDeltaCore.h */,
-				BFF074251E9DAD2800ACDF4A /* GBCDeltaCore.m */,
 				BFF074181E9D99B200ACDF4A /* GBC.swift */,
 				BFF074201E9DAA5400ACDF4A /* Bridge */,
 				BF833CA51EB07F6200B73D57 /* Model */,
+				BFFDF03C23E3BE3E00931B96 /* Types */,
 				BFF074171E9D991A00ACDF4A /* Supporting Files */,
 			);
 			path = GBCDeltaCore;
@@ -565,6 +567,15 @@
 			path = Bridge;
 			sourceTree = "<group>";
 		};
+		BFFDF03C23E3BE3E00931B96 /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				BFFDF03823E3BDCE00931B96 /* GBCTypes.h */,
+				BFF074251E9DAD2800ACDF4A /* GBCTypes.m */,
+			);
+			path = Types;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -573,6 +584,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF8F2AB31E9C879300F89F15 /* GBCDeltaCore.h in Headers */,
+				BFFDF03A23E3BDCE00931B96 /* GBCTypes.h in Headers */,
 				BF833CAD1EB0821E00B73D57 /* GBCCheat.h in Headers */,
 				BF5996971EA0551100595F8D /* GBCInputGetter.h in Headers */,
 				BFF074231E9DAA8A00ACDF4A /* GBCEmulatorBridge.h in Headers */,
@@ -645,6 +657,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -679,7 +692,7 @@
 				BF833CAE1EB0821E00B73D57 /* GBCCheat.m in Sources */,
 				BF5996961EA0551100595F8D /* GBCInputGetter.cpp in Sources */,
 				BFF074241E9DAA8A00ACDF4A /* GBCEmulatorBridge.mm in Sources */,
-				BFF074261E9DAD2800ACDF4A /* GBCDeltaCore.m in Sources */,
+				BFF074261E9DAD2800ACDF4A /* GBCTypes.m in Sources */,
 				BFF074191E9D99B200ACDF4A /* GBC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

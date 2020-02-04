@@ -8,7 +8,7 @@
 
 #import "GBCCheat.h"
 
-#import <GBCDeltaCore/GBCDeltaCore.h>
+@import DeltaCore;
 
 @implementation GBCCheat
 

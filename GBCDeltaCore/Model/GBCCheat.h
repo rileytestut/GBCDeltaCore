@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <DeltaCore/DeltaCore.h>
+
+#import "GBCTypes.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
