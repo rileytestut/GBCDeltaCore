@@ -212,13 +212,17 @@
 
 - (BOOL)addCheatCode:(NSString *)cheatCode type:(CheatType)type
 {
-    GBCCheat *cheat = [[GBCCheat alloc] initWithCode:cheatCode type:type];
-    if (cheat == nil)
+    NSArray<NSString *> *codes = [cheatCode componentsSeparatedByString:@"\n"];
+    for (NSString *code in codes)
     {
-        return NO;
+        GBCCheat *cheat = [[GBCCheat alloc] initWithCode:code type:type];
+        if (cheat == nil)
+        {
+            return NO;
+        }
+        
+        [self.cheats addObject:cheat];
     }
-    
-    [self.cheats addObject:cheat];
     
     return YES;
 }
