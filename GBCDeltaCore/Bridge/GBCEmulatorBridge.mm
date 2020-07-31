@@ -16,8 +16,8 @@
 
 // DeltaCore
 #import <GBCDeltaCore/GBCDeltaCore.h>
+#import <DeltaCore/DeltaCore.h>
 #import <DeltaCore/DeltaCore-Swift.h>
-#import "GBCDeltaCore-Swift.h"
 
 // HACKY. Need to access private members to ensure save data loads properly.
 // This redefines the private members as public so we can use them.
