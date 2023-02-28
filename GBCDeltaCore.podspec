@@ -4,7 +4,7 @@ Pod::Spec.new do |spec|
   spec.summary      = "Game Boy Color plug-in for Delta emulator."
   spec.description  = "iOS framework that wraps Gambatte to allow playing GBC games with Delta emulator."
   spec.homepage     = "https://github.com/rileytestut/GBCDeltaCore"
-  spec.platform     = :ios, "12.0"
+  spec.platform     = :ios, "14.0"
   spec.source       = { :git => "https://github.com/rileytestut/GBCDeltaCore.git" }
 
   spec.author             = { "Riley Testut" => "riley@rileytestut.com" }
