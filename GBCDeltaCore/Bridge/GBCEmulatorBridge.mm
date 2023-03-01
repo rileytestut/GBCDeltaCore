@@ -137,12 +137,12 @@
 
 #pragma mark - Inputs -
 
-- (void)activateInput:(NSInteger)input value:(double)value
+- (void)activateInput:(NSInteger)input value:(double)value playerIndex:(NSInteger)playerIndex
 {
     self.inputGetter->activateInput((unsigned)input);
 }
 
-- (void)deactivateInput:(NSInteger)input
+- (void)deactivateInput:(NSInteger)input playerIndex:(NSInteger)playerIndex
 {
     self.inputGetter->deactivateInput((unsigned)input);
 }
