@@ -70,6 +70,7 @@
 		BFF074261E9DAD2800ACDF4A /* GBCTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF074251E9DAD2800ACDF4A /* GBCTypes.m */; };
 		BFF074271E9DB58E00ACDF4A /* libGambatte.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8F2D561E9D8C2800F89F15 /* libGambatte.a */; };
 		BFFDF03A23E3BDCE00931B96 /* GBCTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = BFFDF03823E3BDCE00931B96 /* GBCTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D572399A2B81A6E800A07E3A /* DeltaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D57239992B81A6E800A07E3A /* DeltaCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -244,6 +245,7 @@
 		BFF074221E9DAA8A00ACDF4A /* GBCEmulatorBridge.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GBCEmulatorBridge.mm; sourceTree = "<group>"; };
 		BFF074251E9DAD2800ACDF4A /* GBCTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBCTypes.m; sourceTree = "<group>"; };
 		BFFDF03823E3BDCE00931B96 /* GBCTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBCTypes.h; sourceTree = "<group>"; };
+		D57239992B81A6E800A07E3A /* DeltaCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DeltaCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +253,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D572399A2B81A6E800A07E3A /* DeltaCore.framework in Frameworks */,
 				BFF074271E9DB58E00ACDF4A /* libGambatte.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,6 +283,7 @@
 				BF8F2AB01E9C879300F89F15 /* GBCDeltaCore */,
 				BF8F2D571E9D8C2800F89F15 /* libGambatte */,
 				BF8F2AAF1E9C879300F89F15 /* Products */,
+				D57239982B81A6E800A07E3A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -574,6 +578,14 @@
 				BFF074251E9DAD2800ACDF4A /* GBCTypes.m */,
 			);
 			path = Types;
+			sourceTree = "<group>";
+		};
+		D57239982B81A6E800A07E3A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D57239992B81A6E800A07E3A /* DeltaCore.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
