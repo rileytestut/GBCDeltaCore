@@ -21,7 +21,7 @@ Pod::Spec.new do |spec|
     
   spec.xcconfig = {
     "HEADER_SEARCH_PATHS" => '"${PODS_CONFIGURATION_BUILD_DIR}"',
-    "USER_HEADER_SEARCH_PATHS" => '"${PODS_CONFIGURATION_BUILD_DIR}/DeltaCore/Swift Compatibility Header"',
+    "USER_HEADER_SEARCH_PATHS" => '"${PODS_CONFIGURATION_BUILD_DIR}/DeltaCore/Swift Compatibility Header" "$(PODS_ROOT)/Headers/Private/GBCDeltaCore/gambatte/common" "$(PODS_ROOT)/Headers/Private/GBCDeltaCore/gambatte/libgambatte/include" "$(PODS_ROOT)/Headers/Private/GBCDeltaCore/gambatte/libgambatte/src"',
     "OTHER_CFLAGS" => "-DHAVE_CSTDINT"
   }
   

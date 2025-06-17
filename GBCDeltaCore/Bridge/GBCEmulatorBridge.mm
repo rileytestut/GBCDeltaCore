@@ -74,7 +74,7 @@
         _inputGetter = inputGetter;
         
         std::shared_ptr<gambatte::GB> gambatte(new gambatte::GB());
-        gambatte->setInputGetter(inputGetter.get());
+        gambatte->setInputGetter((gambatte::InputGetter *)&GBCInputGetter::get, inputGetter.get());
         gambatte->setSaveDir(_gameSaveDirectory.fileSystemRepresentation);
         _gambatte = gambatte;
         
@@ -90,13 +90,13 @@
 {
     self.gameURL = gameURL;
     
-    gambatte::LoadRes result = self.gambatte->load(gameURL.fileSystemRepresentation, gambatte::GB::MULTICART_COMPAT);
+    gambatte::LoadRes result = self.gambatte->load(gameURL.fileSystemRepresentation);
     NSLog(@"Started Gambatte with result: %@", @(result));
 }
 
 - (void)stop
 {
-    self.gambatte->reset();
+    self.gambatte->reset(0);
 }
 
 - (void)pause

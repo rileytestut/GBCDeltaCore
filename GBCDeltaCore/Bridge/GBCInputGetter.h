@@ -11,7 +11,7 @@
 
 #include "inputgetter.h"
 
-class GBCInputGetter : public gambatte::InputGetter
+class GBCInputGetter
 {
 public:
     GBCInputGetter();
@@ -22,6 +22,8 @@ public:
     void resetInputs();
     
     unsigned inputs();
+    
+    static unsigned get(GBCInputGetter *p) { return p->inputs(); }
     
     unsigned operator()();
     
