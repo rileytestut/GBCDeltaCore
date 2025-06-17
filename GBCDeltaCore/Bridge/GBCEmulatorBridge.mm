@@ -45,6 +45,8 @@
 
 @property (nonatomic, readonly) NSMutableSet<GBCCheat *> *cheats;
 
+@property (nonatomic, readonly) NSLock *cameraLock;
+
 @end
 
 @implementation GBCEmulatorBridge
@@ -79,6 +81,8 @@
         _gambatte = gambatte;
         
         _cheats = [NSMutableSet set];
+        
+        _cameraLock = [[NSLock alloc] init];
     }
     
     return self;
@@ -90,8 +94,10 @@
 {
     self.gameURL = gameURL;
     
-    gambatte::LoadRes result = self.gambatte->load(gameURL.fileSystemRepresentation);
+    gambatte::LoadRes result = self.gambatte->load(gameURL.fileSystemRepresentation, gambatte::GB::RESERVED_FLAG | gambatte::GB::NO_BIOS);
     NSLog(@"Started Gambatte with result: %@", @(result));
+    
+    self.gambatte->setCameraCallback(&camera_callback);
 }
 
 - (void)stop
@@ -291,6 +297,36 @@
 - (NSTimeInterval)frameDuration
 {
     return (1.0 / 60.0);
+}
+
+- (void)setCameraFrameData:(NSData *)cameraFrameData
+{
+    [GBCEmulatorBridge.sharedBridge.cameraLock lock];
+    
+    _cameraFrameData = [cameraFrameData copy];
+    
+    [GBCEmulatorBridge.sharedBridge.cameraLock unlock];
+}
+
+#pragma mark - Callbacks -
+
+// A 128x112 native endian rgb32 image should be copied to the buffer.
+static void camera_callback(int *intBuffer)
+{
+    @autoreleasepool {
+        char *buffer = (char *)intBuffer;
+        int imageSize = 128 * 112 * 4;
+        
+        [GBCEmulatorBridge.sharedBridge.cameraLock lock];
+        
+        NSData *cameraFrameData = GBCEmulatorBridge.sharedBridge.cameraFrameData;
+        if (cameraFrameData && cameraFrameData.length <= imageSize)
+        {
+            memcpy(buffer, cameraFrameData.bytes, imageSize);
+        }
+        
+        [GBCEmulatorBridge.sharedBridge.cameraLock unlock];
+    }
 }
 
 @end

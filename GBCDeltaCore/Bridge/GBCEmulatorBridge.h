@@ -19,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (class, nonatomic, readonly) GBCEmulatorBridge *sharedBridge;
 
+@property (nonatomic, copy) NSData *cameraFrameData;
+
 @end
 
 NS_ASSUME_NONNULL_END
