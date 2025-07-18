@@ -28,7 +28,11 @@
 
 // Gambatte
 #include "gambatte.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Weverything"
 #include "cpu.h"
+#pragma clang diagnostic pop
 
 #pragma clang diagnostic pop
 
