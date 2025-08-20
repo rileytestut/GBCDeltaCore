@@ -39,6 +39,11 @@
 // Undefine private.
 #undef private
 
+NSInteger defaultPaletteColor0 = 0xFFFFFF;
+NSInteger defaultPaletteColor1 = 0xAAAAAA;
+NSInteger defaultPaletteColor2 = 0x555555;
+NSInteger defaultPaletteColor3 = 0x000000;
+
 @interface GBCEmulatorBridge () <DLTAEmulatorBridging>
 
 @property (nonatomic, copy, nullable, readwrite) NSURL *gameURL;
@@ -93,6 +98,51 @@
 - (void)startWithGameURL:(NSURL *)gameURL
 {
     self.gameURL = gameURL;
+    
+    if (self.backgroundPalette)
+    {
+        _gambatte->setDmgPaletteColor(0, 0, self.backgroundPalette.color0);
+        _gambatte->setDmgPaletteColor(0, 1, self.backgroundPalette.color1);
+        _gambatte->setDmgPaletteColor(0, 2, self.backgroundPalette.color2);
+        _gambatte->setDmgPaletteColor(0, 3, self.backgroundPalette.color3);
+    }
+    else
+    {
+        _gambatte->setDmgPaletteColor(0, 0, defaultPaletteColor0);
+        _gambatte->setDmgPaletteColor(0, 1, defaultPaletteColor1);
+        _gambatte->setDmgPaletteColor(0, 2, defaultPaletteColor2);
+        _gambatte->setDmgPaletteColor(0, 3, defaultPaletteColor3);
+    }
+        
+    if (self.spritePalette)
+    {
+        _gambatte->setDmgPaletteColor(1, 0, self.spritePalette.color0);
+        _gambatte->setDmgPaletteColor(1, 1, self.spritePalette.color1);
+        _gambatte->setDmgPaletteColor(1, 2, self.spritePalette.color2);
+        _gambatte->setDmgPaletteColor(1, 3, self.spritePalette.color3);
+    }
+    else
+    {
+        _gambatte->setDmgPaletteColor(1, 0, defaultPaletteColor0);
+        _gambatte->setDmgPaletteColor(1, 1, defaultPaletteColor1);
+        _gambatte->setDmgPaletteColor(1, 2, defaultPaletteColor2);
+        _gambatte->setDmgPaletteColor(1, 3, defaultPaletteColor3);
+    }
+    
+    if (self.foregroundPalette)
+    {
+        _gambatte->setDmgPaletteColor(2, 0, self.foregroundPalette.color0);
+        _gambatte->setDmgPaletteColor(2, 1, self.foregroundPalette.color1);
+        _gambatte->setDmgPaletteColor(2, 2, self.foregroundPalette.color2);
+        _gambatte->setDmgPaletteColor(2, 3, self.foregroundPalette.color3);
+    }
+    else
+    {
+        _gambatte->setDmgPaletteColor(2, 0, defaultPaletteColor0);
+        _gambatte->setDmgPaletteColor(2, 1, defaultPaletteColor1);
+        _gambatte->setDmgPaletteColor(2, 2, defaultPaletteColor2);
+        _gambatte->setDmgPaletteColor(2, 3, defaultPaletteColor3);
+    }
     
     gambatte::LoadRes result = self.gambatte->load(gameURL.fileSystemRepresentation, gambatte::GB::MULTICART_COMPAT);
     NSLog(@"Started Gambatte with result: %@", @(result));

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		823D99812E566CC80025F4CD /* GBCPalette.h in Headers */ = {isa = PBXBuildFile; fileRef = 823D99802E566CC80025F4CD /* GBCPalette.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		823D99832E566CD40025F4CD /* GBCPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = 823D99822E566CD40025F4CD /* GBCPalette.m */; };
 		BF5267CE1F60BD7F007737FB /* Standard.deltamapping in Resources */ = {isa = PBXBuildFile; fileRef = BF5267CD1F60BD7C007737FB /* Standard.deltamapping */; };
 		BF5996961EA0551100595F8D /* GBCInputGetter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF5996941EA0551100595F8D /* GBCInputGetter.cpp */; };
 		BF5996971EA0551100595F8D /* GBCInputGetter.h in Headers */ = {isa = PBXBuildFile; fileRef = BF5996951EA0551100595F8D /* GBCInputGetter.h */; };
@@ -109,6 +111,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		823D99802E566CC80025F4CD /* GBCPalette.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBCPalette.h; sourceTree = "<group>"; };
+		823D99822E566CD40025F4CD /* GBCPalette.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GBCPalette.m; sourceTree = "<group>"; };
 		BF5267CD1F60BD7C007737FB /* Standard.deltamapping */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Standard.deltamapping; sourceTree = "<group>"; };
 		BF5996941EA0551100595F8D /* GBCInputGetter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GBCInputGetter.cpp; sourceTree = "<group>"; };
 		BF5996951EA0551100595F8D /* GBCInputGetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBCInputGetter.h; sourceTree = "<group>"; };
@@ -285,6 +289,8 @@
 			children = (
 				BF833CAB1EB0821E00B73D57 /* GBCCheat.h */,
 				BF833CAC1EB0821E00B73D57 /* GBCCheat.m */,
+				823D99802E566CC80025F4CD /* GBCPalette.h */,
+				823D99822E566CD40025F4CD /* GBCPalette.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -618,6 +624,7 @@
 				BF8F2AB31E9C879300F89F15 /* GBCDeltaCore.h in Headers */,
 				BFFDF03A23E3BDCE00931B96 /* GBCTypes.h in Headers */,
 				BF833CAD1EB0821E00B73D57 /* GBCCheat.h in Headers */,
+				823D99812E566CC80025F4CD /* GBCPalette.h in Headers */,
 				BF5996971EA0551100595F8D /* GBCInputGetter.h in Headers */,
 				BFF074231E9DAA8A00ACDF4A /* GBCEmulatorBridge.h in Headers */,
 			);
@@ -742,6 +749,7 @@
 				BF5996961EA0551100595F8D /* GBCInputGetter.cpp in Sources */,
 				BFF074241E9DAA8A00ACDF4A /* GBCEmulatorBridge.mm in Sources */,
 				BFF074261E9DAD2800ACDF4A /* GBCTypes.m in Sources */,
+				823D99832E566CD40025F4CD /* GBCPalette.m in Sources */,
 				BFF074191E9D99B200ACDF4A /* GBC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

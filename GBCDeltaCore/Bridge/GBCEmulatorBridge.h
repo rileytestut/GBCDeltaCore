@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <GBCDeltaCore/GBCPalette.h>
 
 @protocol DLTAEmulatorBridging;
 
@@ -18,6 +19,10 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma clang diagnostic pop
 
 @property (class, nonatomic, readonly) GBCEmulatorBridge *sharedBridge;
+
+@property (nonatomic, strong, nullable) GBCPalette *backgroundPalette;
+@property (nonatomic, strong, nullable) GBCPalette *spritePalette;
+@property (nonatomic, strong, nullable) GBCPalette *foregroundPalette;
 
 @end
 
