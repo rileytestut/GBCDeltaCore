@@ -189,6 +189,52 @@ NSInteger defaultPaletteColor3 = 0x000000;
     }
 }
 
+- (nullable NSData *)readMemoryAtAddress:(NSInteger)address size:(NSInteger)size
+{
+    // Hacky pointer manipulation to obtain the underlying CPU struct and its Cartridge.
+    gambatte::CPU *cpu = (gambatte::CPU *)self.gambatte->p_;
+    auto &cart = cpu->mem_.cart_;
+    
+    void *bytes = NULL;
+    if (address < 0xC000)
+    {
+        // Based on Memory::nontrivial_read()
+        
+        if (address < 0x8000)
+        {
+            bytes = cart.romdata((unsigned int)address >> 14) + address;
+        }
+        else if (address < 0xA000)
+        {
+            bytes = cart.vrambankptr() + address;
+        }
+        else if (cart.rsrambankptr())
+        {
+            bytes = (void *)(cart.rsrambankptr() + address);
+        }
+        else
+        {
+            return NULL;
+        }
+    }
+    else if (address >= 0xC000 && address <= 0xDFFF)
+    {
+        bytes = cart.wramdata(0) + (address - 0xC000);
+    }
+    else if (address >= 0xFF80 && address <= 0xFFFE)
+    {
+        bytes = cart.wramdata(1) + (address - 0xFF80);
+    }
+    else
+    {
+        // Beyond RAM bounds, return nil.
+        return nil;
+    }
+    
+    NSData *data = [NSData dataWithBytesNoCopy:bytes length:size freeWhenDone:NO];
+    return data;
+}
+
 #pragma mark - Inputs -
 
 - (void)activateInput:(NSInteger)input value:(double)value playerIndex:(NSInteger)playerIndex
